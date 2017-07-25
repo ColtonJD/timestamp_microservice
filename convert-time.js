@@ -1,3 +1,0 @@
-var convertTime = function (time){
-  
-}

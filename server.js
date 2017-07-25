@@ -8,7 +8,7 @@
 var fs = require('fs');
 var express = require('express');
 var app = express();
-var convertTime = require('./convert-time.js');
+var convert = require('./convert.js');
 
 if (!process.env.DISABLE_XORIGIN) {
   app.use(function(req, res, next) {
@@ -41,7 +41,7 @@ app.route('/')
 
 app.get('/:date', function(req, res) {
 		  var data = req.params.date;
-      res.json(convertTime(data.time));
+      res.json(convert(data));
     });
 
 // Respond not found to all the wrong routes
