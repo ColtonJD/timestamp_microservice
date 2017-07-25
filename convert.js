@@ -1,7 +1,10 @@
 var moment = require('moment');
-var convert = function (time){
-  var result = {
-    'time': time
+var time = function (time){
+  var result = {};
+  if(moment(time, "MMMM/DD/YYYY", true).isValid()){
+    /.../
   };
-  return result;
-}
+  else if(isNaN(time) === false){}
+};
+
+module.exports = time;
