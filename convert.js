@@ -1,7 +1,7 @@
 var moment = require('moment');
 var time = function (time){
   var result = {};
-  if(moment(time, "MM/DD/YYYY", true).isValid()){
+  if((moment(time, "MM/DD/YYYY").isValid(), true) === true){
     var date = moment(time,'MMMM DD YYYY');
     var result = {
         unix: date.format('X'),
