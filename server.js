@@ -41,7 +41,7 @@ app.route('/')
 
 app.get('/:date', function(req, res) {
 		  var data = req.params.date;
-      var result = convert(data);
+      var result = convert(data.time);
       res.json(result);
     });
 

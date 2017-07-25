@@ -1,17 +1,17 @@
 var moment = require('moment');
 var time = function (time){
   var result = {};
-  if(moment(time, "MMMM/DD/YYYY", true).isValid()){
-    var uni = '';
-    result = {
-      unix: moment.unix(time),
-      natural: time
+  if(moment(time, "MMMM DD YYYY").isValid()){
+    var date = moment(time,'MMMM DD YYYY');
+    var data = {
+        unix: date.format('X'),
+        natural: time
     }
   }else if(isNaN(time) === false){
-    var nat = '';
-    result = {
-      unix: time,
-      natural: time.format('MMMM DD YYYY')
+    var date = moment.unix(time);
+    var result = {
+        unix: time,
+        natural : date.format('MMMM DD YYYY')
     }
   }else{
     result = {
